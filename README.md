@@ -4,6 +4,13 @@
 Store front web app built with React including a fully functional 
 shopping cart.
 
+## Practiced Skills
+
+<ul>
+    <li>SASS</li>
+    <li>React</li>
+</ul>
+
 ## Getting Started
 
 Clone the repository and install dependencies.
