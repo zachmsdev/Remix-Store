@@ -21,7 +21,7 @@ shopping cart.
 Clone the repository and install dependencies.
 
 ```bash
-git clone 'blank'
+git clone https://github.com/zachmsdev/Remix-Store.git
 cd Shopping-Cart
 npm install
 npm run dev
