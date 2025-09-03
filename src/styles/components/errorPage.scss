@@ -1,0 +1,27 @@
+
+@use '../_colors.scss';
+
+// 404 Page Styles
+
+.errorPage {
+    height: 100vh;
+    background: colors.$remixGreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    color: colors.$lighterGrey;
+}
+
+
+
+
+
+
+
+
+
+
+
+

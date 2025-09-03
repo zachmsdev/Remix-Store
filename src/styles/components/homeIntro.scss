@@ -1,0 +1,72 @@
+
+@use '../colors';
+
+// Intro Component Styles
+
+.introSection {
+    padding-bottom: 6em;
+    & .intro {
+        width: 60%;
+        max-width: 50em;
+        min-width: 40em;
+        margin: 0 auto;
+        background: white;
+        margin-top: -8em;
+        border-radius: 0.5em;
+        padding-top: 3.75em;
+        @media only screen and (max-width: 700px) {
+            width: 85%;
+            max-width: initial;
+            min-width: initial;
+            margin-top: -10em;
+        }
+        & h1 {
+            text-align: center;
+            font-size: 2em;
+            font-weight: 500;
+            margin-bottom: 1em;
+            color: colors.$darkGrey;
+            & br {
+                @media only screen and (max-width: 444px) {
+                    display: none;
+                }
+            }
+            @media only screen and (max-width: 700px) {
+                font-size: 1.6em;
+                padding-left: 2em;
+                padding-right: 2em;
+            }
+        }
+        & p {
+            text-align: center;
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            color: colors.$darkGrey;
+            border-top: 1px solid colors.$lightGrey;
+            padding-top: 2em;
+            margin-bottom: 3em;
+            @media only screen and (max-width: 700px) {
+                padding-left: 2em;
+                padding-right: 2em;
+            }
+        }
+        & .imagePlacement {
+            width: 100%;
+            height: 16em;
+            & img {
+                object-fit: cover;
+                height: 100%;
+                width: 100%;
+                border-bottom-left-radius: 0.5em;
+                border-bottom-right-radius: 0.5em;
+            }
+        }
+    }
+}
+
+
+
+
+
+

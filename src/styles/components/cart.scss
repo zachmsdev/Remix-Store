@@ -1,0 +1,259 @@
+
+@use '../colors';
+
+// Cart Styles
+
+.shoppingCart {
+    background: white;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 20em;
+    transition: transform 0.2s ease-in-out;
+    transform: translateX(20em);
+    will-change: transform;
+    z-index: 2;
+    user-select: none;
+    &.viewing {
+        transform: translateX(0em);
+    }
+    & .cartHeader {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.25em;
+        border-bottom: 1px solid colors.$lighterGrey;
+        & .closer {
+            & p {
+                font-size: 0.85em;
+                font-family: sans-serif;
+                cursor: pointer;
+                &:hover {
+                    color: colors.$lightGreyText;
+                }
+            }
+        }
+        & h3 {
+            color: colors.$darkGreyText;
+        }
+    }
+    // Empty Cart Section
+    & .emptyCart {
+        padding-top: 3em;
+        height: 15em;
+        user-select: none;
+        & svg {
+            margin: 0 auto;
+            display: block;
+            font-size: 6em;
+            fill: colors.$cartIcon;
+        }
+        & h4 {
+            text-align: center;
+            padding-top: 1em;
+            font-weight: 500;
+            font-family: sans-serif;
+            font-size: 0.95em;
+            color: #7a7a7a;
+        }
+    }
+    // Filled Cart Section
+    & .filledCart {
+        padding: 1.25em;
+        padding-bottom: 1.25em;
+        max-height: calc(100% - 195px);
+        overflow: hidden;
+        overflow-y: auto;
+        -ms-overflow-style: none;
+        user-select: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        & .deleter {
+            transition: color 0.15s ease-in-out;
+            &:hover {
+                color: colors.$lightGreyText;
+            }
+        }
+        & .productDisplay {
+            list-style-type: none;
+            & .productImage {
+                height: 4em;
+                width: 4em;
+                & img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            & .productInfo {
+                flex-grow: 1;
+                padding-left: 0.5em;
+                position: relative;
+                & h4 {
+                    margin-bottom: 0.4em;
+                    color: colors.$darkGreyText;
+                    font-size: 0.9em;
+                    font-family: sans-serif;
+                }
+                & svg {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    &:hover {
+                        fill: black;
+                    }
+                }
+                & .counter {
+                    width: 4em;
+                    height: 2em;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: stretch;
+                    border: 1px solid colors.$lightGrey;
+                    margin-bottom: 0.3em;
+                    // Counter element
+                    & div {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 0.8em;
+                        font-family: sans-serif;
+                        color: colors.$lightGreyText;
+                    }
+                    & .negative, 
+                    .positive, div {
+                        flex-grow: 1;
+                        cursor: pointer;
+                    }
+                    & .negative {
+                        border-right: 1px solid colors.$lightGrey;
+                        transition: all 0.35s ease-in-out;
+                        &:hover {
+                            background: colors.$remixGreen;
+                            color: white;
+                        }
+                    }
+                    & .positive {
+                        border-left: 1px solid colors.$lightGrey;
+                        transition: all 0.35s;
+                        &:hover {
+                            background: colors.$remixGreen;
+                            color: white;
+                        }
+                    }
+                    & button {
+                        background: none;
+                        border: none;
+                        appearance: none;
+                    }
+                }
+            }
+            & .itemPrice {
+                color: colors.$remixGreen; 
+                font-size: 0.85em;
+                font-family: sans-serif;
+            }
+            & li {
+                display: flex;
+                margin-bottom: 1em;
+                padding: 0.35em;
+                cursor: pointer;
+                transition: background 0.35s;
+                &:hover {
+                    background: colors.$highlightCart;
+                }
+            }
+        }
+        // Checkout button section
+        & .checkout {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            height: 4em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // The "Checkout" button
+            & button {
+                height: 3em; 
+                width:  21em;
+                appearance: none;
+                border: none;
+                background: colors.$remixGreen;
+                color: #ededed;
+                cursor: pointer;
+            }
+        }
+    }
+    // Subtotal section
+    & .subtotal {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 4em;
+        left: 0;
+        width: 100%;
+        padding: 1em 1.25em 1em 1.25em;
+        border-top: 1px solid colors.$lighterGrey;
+        border-bottom: 1px solid colors.$lighterGrey;
+        & p:first-of-type {
+            font-weight: 500;
+            font-family: sans-serif;
+            color: colors.$darkGreyText;
+        }
+        & p:last-of-type {
+            color: colors.$remixGreen;
+            font-weight: 700;
+            font-family: sans-serif;
+        }
+    }
+    & .checkOutNoti {
+        background: #3c3d3c;
+        color: #d8d8d8;
+        width: 11em;
+        display: flex;
+        padding: 0.45em 0em 0.45em 0em;
+        justify-content: center;
+        align-items: center;
+        color: colors.$lightGrey;
+        font-size: 0.8em;
+        position: absolute;
+        bottom: 1.5em;
+        left: -11em;
+        border-radius: 0.2em;
+        opacity: 0;
+        &.entrance {
+            animation: fade 2s linear;
+        }
+        @media only screen and (max-width: 470px) {
+            transform: rotate(270deg);
+            left: -6.6em;
+            bottom: 6.5em;
+        }
+    }
+}
+
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    8% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+

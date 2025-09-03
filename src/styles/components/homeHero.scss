@@ -1,0 +1,104 @@
+
+@use '../colors';
+
+// Homepage Hero Component Styles
+
+.homeHero {
+    height: 46em;
+    background-image: url('../../assets/homeHero.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    // iOS Safari
+    @supports (-webkit-touch-callout: none) {
+        background-attachment: scroll; 
+    }
+    & .heroContent {
+        max-width: 34em;
+        margin: 0 auto;
+        margin-top: 9em;
+        text-align: center;
+        // Title
+        & h1 {
+            font-size: 3.5em;
+            font-weight: 500;
+            margin-bottom: 0.3em;
+            text-shadow: 1px 1px 30px white;
+            color: colors.$darkGreyText;
+            @media only screen and (max-width: 700px) {
+                font-size: 2.95em;
+                margin-bottom: 0.15em;
+                text-shadow: 1px 1px 20px white;
+            }
+            @media only screen and (max-width: 440px) {
+                margin-bottom: 0.075em;
+            }
+        }
+        & p {
+            margin-bottom: 2em;
+            text-shadow: 1px 1px 15px white;
+            @media only screen and (max-width: 700px) {
+                padding-left: 5em;
+                padding-right: 5em;
+                line-height: 1.4;
+            }
+            @media only screen and (max-width: 450px) {
+                text-shadow: 1px 1px 10px white;
+            }
+        }
+        // Button Section
+        & > div {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+            & button {
+                padding: 0.9em 2em;
+                appearance: none;
+                border: none;
+                border-radius: 0.5em;
+                cursor: pointer;
+                width: 12em;
+                // "Sign up" button
+                &:first-of-type {
+                    background: colors.$remixGreen;
+                    color: colors.$lightGrey;
+                }
+                // "Shop now" button
+                &:last-of-type {
+                    position: relative;
+                    background:transparent;
+                    border: 1px solid lightgrey;
+                    overflow-x: hidden;
+                    color: colors.$lightGrey;
+                    transition: 0.15s;
+                    &:hover {
+                        transform: scale(1.01);
+                    }
+                    &:active {
+                        transform: translateY(0.1em);
+                    }
+                    &::after {
+                        position: absolute;
+                        content: '';
+                        height: 100%;
+                        width: 0.35em;
+                        top: 0;
+                        left: 0;
+                        filter: blur(0.3em);
+                        transition: 0.1s;
+                        background: transparent;
+                    }
+                    &:hover::after {
+                        background: white;
+                        left: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+

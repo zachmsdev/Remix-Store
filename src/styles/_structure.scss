@@ -1,0 +1,23 @@
+
+@use './colors.scss';
+
+// Structure Styles
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body, main {
+    min-height: 100vh;
+}
+
+main {
+    background-color: colors.$lighterGrey;
+    position: relative;
+}
+
+
+
+
