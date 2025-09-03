@@ -15,10 +15,49 @@ const MainRouter = () => {
     const [cartOpen, setCartOpen] = useState(false);
     return (
         <Routes>
-            <Route path="/" element={ <App setCartAmount={setCartAmount} cartAmount={cartAmount} cartOpen={cartOpen} setCartOpen={setCartOpen} cartItems={cartItems} setCartItems={setCartItems} /> }></Route>
-            <Route path="/home" element={ <App cartAmount={cartAmount} cartOpen={cartOpen} setCartOpen={setCartOpen}/> }></Route>
-            <Route path="shop" element={ <Shop cartOpen={cartOpen} setCartOpen={setCartOpen} storeState={storeState} setStoreState={setStoreState} cartAmount={cartAmount} setCartAmount={setCartAmount} setCartItems={setCartItems} cartItems={cartItems} /> }></Route>
-            <Route path="*" element={ <NotFound /> }></Route>
+            <Route 
+                path="/" 
+                element={ 
+                    <App 
+                        setCartAmount={setCartAmount} 
+                        cartAmount={cartAmount} 
+                        cartOpen={cartOpen} 
+                        setCartOpen={setCartOpen} 
+                        cartItems={cartItems} 
+                        setCartItems={setCartItems} 
+                    /> 
+                }>
+            </Route>
+            <Route 
+                path="/home" 
+                element={ 
+                    <App 
+                        cartAmount={cartAmount} 
+                        cartOpen={cartOpen} 
+                        setCartOpen={setCartOpen}
+                    /> 
+                }>
+            </Route>
+            <Route 
+                path="shop" 
+                element={ 
+                    <Shop 
+                        cartOpen={cartOpen} 
+                        setCartOpen={setCartOpen} 
+                        storeState={storeState} 
+                        setStoreState={setStoreState} 
+                        cartAmount={cartAmount} 
+                        setCartAmount={setCartAmount} 
+                        setCartItems={setCartItems} 
+                        cartItems={cartItems} /> 
+                }>
+            </Route>
+            <Route 
+                path="*" 
+                element={ 
+                    <NotFound /> 
+            }>
+            </Route>
         </Routes>
     )
 } 
