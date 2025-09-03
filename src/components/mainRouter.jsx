@@ -56,7 +56,7 @@ const MainRouter = () => {
                 path="*" 
                 element={ 
                     <NotFound /> 
-            }>
+                }>
             </Route>
         </Routes>
     )

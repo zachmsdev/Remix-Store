@@ -29,13 +29,15 @@ function App({ cartAmount, cartOpen, setCartOpen, cartItems, setCartItems, setCa
                 setCartOpen={setCartOpen} 
                 setCartItems={setCartItems} 
             /> 
-            { cartOpen ? 
-                <DarkOverlay /> : 
-                null 
+            { 
+                cartOpen ? 
+                    <DarkOverlay /> : 
+                    null 
             }
-            { tryingSignUp ? 
-                <SignUp tryingSignUp={tryingSignUp} /> : 
-                null 
+            { 
+                tryingSignUp ? 
+                    <SignUp tryingSignUp={tryingSignUp} /> : 
+                    null 
             }
         </main>
     )
