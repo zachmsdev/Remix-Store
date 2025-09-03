@@ -7,8 +7,13 @@ shopping cart.
 ## Practiced Skills
 
 <ul>
-    <li>SASS</li>
     <li>React</li>
+    <li>SCSS</li>
+    <li>JavaScript</li>
+    <li>Linux</li>
+    <li>Vim</li>
+    <li>Chrome Dev Tools</li>
+    <li>Gimp</li>
 </ul>
 
 ## Getting Started
