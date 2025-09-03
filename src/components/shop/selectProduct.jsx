@@ -67,7 +67,7 @@ const SelectProduct = ({ storeState, setStoreState, setCartAmount, setCartItems,
                     { storeState.map((element, index) => {
                         // Getting specific item
                         const cartItem = cartItems.find(item => item.productName === element.productName);
-
+                        // Grabbing quantity of that item
                         const quantityInCart = cartItem ? cartItem.quantity : 0;
 
                         return <li key={index}>
