@@ -65,7 +65,6 @@ const SelectProduct = ({ storeState, setStoreState, setCartAmount, setCartItems,
                 <h1>Our Products<span onClick={changeStoreState}>Show All</span></h1>
                 <ul className="products">
                     { storeState.map((element, index) => {
-
                         // Getting specific item
                         const cartItem = cartItems.find(item => item.productName === element.productName);
 
