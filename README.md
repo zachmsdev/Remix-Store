@@ -22,7 +22,7 @@ Clone the repository and install dependencies.
 
 ```bash
 git clone https://github.com/zachmsdev/Remix-Store.git
-cd Shopping-Cart
+cd Remix-Store
 npm install
 npm run dev
 ```
